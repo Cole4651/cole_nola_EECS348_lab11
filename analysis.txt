@@ -1,0 +1,24 @@
+1. 
+The program starts its loop at i = 1, so it never accessed
+attendance_records[0], the first lecture. The loop should start at i = 0. 
+
+2.
+No valid 10-value record avoids the loop, so it is impossible to avoid
+executing the fault.
+
+3. Input: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+   Expected: Passed
+   Actual: Passed
+The skipped first value is present, so the absent count remains correct.
+
+4. Input: [0, 0, 0, 0, 1, 1, 1, 1, 1, 1]
+   Expected: Failed
+   Actual: Failed
+The correct absent count is 4, but the program counts 3. Both counts still
+meet the failure threshold, so the output is correct.
+
+5. Input: [0, 0, 0, 1, 1, 1, 1, 1, 1, 1]
+   Expected: Failed
+   Actual: Passed
+The first absence is skipped, leaving a count of 2 instead of 3, so the output
+is incorrect.
