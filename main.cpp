@@ -1,9 +1,9 @@
 #include <vector>
 #include <iostream>
+using namespace std;
 
 
-//changed const vector<int>& attendance_records to const std::vector<int>& attendance_records in parameter
-bool fail_lecture(const std::vector<int>& attendance_records) { 
+bool fail_lecture(const vector<int>& attendance_records) {
     
     int absent_count = 0;
     for (int i =1; i < attendance_records.size(); ++i) {
@@ -13,8 +13,8 @@ bool fail_lecture(const std::vector<int>& attendance_records) {
 }
 
 int main() {
-    std::vector<int> attendance_records = {1, 0, 1, 0, 0, 1};
+    vector<int> attendance_records = {1, 0, 1, 0, 0, 1};
     bool failed = fail_lecture(attendance_records);
-    std::cout << (failed ? "Failed" : "Passed") << std::endl;
+    cout << (failed ? "Failed" : "Passed") << endl;
     return 0;
 }
